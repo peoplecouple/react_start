@@ -1,9 +1,9 @@
-import TopBanner from "./pages/TopBanner";
+import Tab from "./pages/Tab.01";
 
 const App = () => {
   return (
     <>
-      <TopBanner />
+      <Tab />
     </>
   )
 }
