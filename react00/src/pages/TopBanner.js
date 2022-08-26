@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BsFillHandThumbsUpFill } from "react-icons/bs";
-import '../topbanner.css';
+import '../basic.css';
 import styles from './Topbanner.module.css'
 
 const TopBanner = () => {

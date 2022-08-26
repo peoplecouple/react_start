@@ -1,7 +1,191 @@
-section{
-  font-size: 100px;
+@import url("https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
-section.on{
-  color: pink;
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1;
+}
+
+.TopBanner {
+  padding: 0px;
+  /* padding은 높이를 0으로 줬을 때 사라지지 않아서 0으로 바꿈 */
+  background: pink;
+  overflow: hidden;
+  /* overflow는 높이를 0으로 줬을 때 글자가 그대로 있기때문에 hidden으로 */
+  height: 100px;
+  transition: 0.5s;
+  /* height가 auto면 transition이 일어나지 않으므로 높이를 줘야 애니매이션 가능*/
+}
+
+.TopBanner.on {
+  height: 0;
+}
+
+.btn {
+  font-size: 30px;
+  color: palevioletred;
+  display: block;
+  /* transform은 block요소가 아니면 안먹는다. */
+}
+
+.btn.on {
+  transform: rotate(0.5turn);
+}
+
+.MainSection {
+  position: relative;
+}
+
+.MainVisual figure {
+  height: 600px;
+  position: relative;
+}
+
+.MainVisual .itm01 {
+  background: url(../public/assets/mainvisual01.jpg) no-repeat center center/cover;
+}
+
+.MainVisual .itm02 {
+  background: url(../public/assets/mainvisual02.jpg) no-repeat center center/cover;
+}
+
+.MainVisual .itm03 {
+  background: url(../public/assets/mainvisual03.jpg) no-repeat center center/cover;
+}
+
+.MainVisual .itm04 {
+  background: url(../public/assets/mainvisual02.jpg) no-repeat center center/cover;
+}
+
+.MainVisual .slogan {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  color: #fff;
+  text-shadow: 0 0 2px #000;
+}
+
+.MainVisual figure h2 {
+  font-size: 80px;
+  font-weight: 900;
+  margin-bottom: 15px;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.MainVisual figure.on h2 {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.MainVisual figure p {
+  font-size: 15px;
+  margin-bottom: 15px;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.MainVisual figure.on p {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.5s 0.5s;
+}
+
+.MainVisual figure a {
+  display: inline-block;
+  padding: 5px 20px 9px 20px;
+  background: #333;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.MainVisual figure.on a {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 0.5s 1s;
+}
+
+.MainSection .slideArrow i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 10px;
+}
+
+.MainSection .slideArrow i:nth-child(1) {
+  margin: 0 0 0 -700px;
+}
+
+.MainSection .slideArrow i:nth-child(2) {
+  margin: 0 0 0 700px;
+}
+
+.MainSection .slideDots {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0;
+}
+
+.MainSection .slideDots li {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 5px;
+  background: #333;
+  margin: 0 2px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.MainSection .slideDots li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: #369;
+}
+
+.MainSection .slideDots li.on::after {
+  width: 100%;
+  transition: 2s;
+}
+
+.MainSection .num {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin-left: 600px;
+  transform: translateX(-100%);
+  font-size: 30px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 2px #000;
 }

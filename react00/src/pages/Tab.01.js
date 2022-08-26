@@ -30,7 +30,7 @@ const Tab = () => {
             TabData.map((el, idx) => (
               <li key={el.id}
                 onClick={() => setNum(idx)}
-                className={num == idx ? 'on' : ''}>
+                className={num === idx ? 'on' : ''}>
                 {el.title}
               </li>
             ))
